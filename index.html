@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>Zipcode Finder</title>
+    <link rel="stylesheet" type="text/css" href="zipstyle.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script type="text/javascript" src="zipcode.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <h1 class="header">Zip Code Finder</h1>
+    </div>
+    <div ng-controller="myController" class="bck">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> <strong class="">ZipData</strong>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3">Postal Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" ng-model="query.postalCode" class="form-control" placeholder="zipcode">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 ">Country:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" ng-model="query.countryCode" class="form-control" placeholder="country">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" ng-click="findZipCodeCity()">Lookup</button>
+                            </form>
+                        </div>
+                        <div class="panel-footer">Result: {{Result.display}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
